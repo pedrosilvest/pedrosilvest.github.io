@@ -1,3 +1,1 @@
-# Welcome to My Website!
-
-bla bla bla... [Learn more about me here](./about/)
+# Welcome to about!
