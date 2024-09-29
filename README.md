@@ -1,6 +1,4 @@
-# [pedrosilvest.github.io](https://pedrosilvest.github.io/)
-
-# Welcome to My Website!
+# Welcome to My Website: [pedrosilvest.github.io](https://pedrosilvest.github.io/)!
 
 Future me, When creating the scripts, should be careful to change the paths to the correct scripts, including previous, next and download buttons
 
