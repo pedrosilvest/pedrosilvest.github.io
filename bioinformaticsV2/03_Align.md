@@ -138,5 +138,5 @@ EOL
 
 ```
 
-[Previous -> Trimming](./02_TrimGalore.md) | 3 | [Next → ](./03_Align.md) | [← Return to main list](../README.md)
+[Previous -> Trimming](./02_TrimGalore.md) | 3 | [Next → Coverage](./04_Coverage.md) | [← Return to main list](../README.md)
 
