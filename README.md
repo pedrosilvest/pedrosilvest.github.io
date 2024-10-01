@@ -12,9 +12,9 @@ bla bla bla... [Learn more about me here](./about/)
 
 Here are the Python files: test
 
-1. [01.md](./bioinformatics/01.md)
-2. [02.md](./bioinformatics/02.md)
-3. [epa3.md](./code/epa.md)
+1. [01.md](./bioinformaticsV2/01_QualityControl.md)
+2. [02.md](./bioinformaticsV2/02_TrimGalore.md)
+3. [03.md](./bioinformaticsV2/03_Align.md)
 4. [epa4.md](./code/epa.md)
 5. [epa5.md](./code/epa.md)
 
