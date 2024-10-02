@@ -15,7 +15,7 @@ Here are the Python files: test
 1. [01.md](./bioinformaticsV2/01_QualityControl.md)
 2. [02.md](./bioinformaticsV2/02_TrimGalore.md)
 3. [03.md](./bioinformaticsV2/03_Align.md)
-4. [epa4.md](./code/epa.md)
+4. [04.md](./bioinformaticsV2/04_Coverage.md)
 5. [epa5.md](./code/epa.md)
 
 1. Who You Are: A short, engaging intro summarizing your professional background and interests.
