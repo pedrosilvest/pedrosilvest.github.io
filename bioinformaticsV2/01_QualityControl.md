@@ -102,4 +102,6 @@ EOL
 
 ```
 
-1 | [Next → Trimming](./02_TrimGalore.md) | [← Return to main list](../README.md)
+1 | [2 → Trimming](./02_TrimGalore.md)
+
+[← Return to main list](../README.md)

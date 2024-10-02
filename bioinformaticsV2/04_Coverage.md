@@ -31,5 +31,7 @@ to edit
 
 ```
 
-[Previous -> Read Alignment](./03_Align.md) | 4 | [Next → Bam Filtering](./05_FilterBam.md) | [← Return to main list](../README.md)
+[3 ← Read Alignment](./03_Align.md) | 4 | [5 → Bam Filtering](./05_FilterBam.md)
+
+[← Return to main list](../README.md)
 

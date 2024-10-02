@@ -159,4 +159,6 @@ EOL
 
 ```
 
-[Previous -> Coverage](./04_Coverage.md) | 5 | [Next → Bam Filtering](./05_FilterBam.md) | [← Return to main list](../README.md)
+[4 ← Coverage](./04_Coverage.md) | 5 | [6 → MarkDuplicates](./06_MarkDuplicates.md)
+
+[← Return to main list](../README.md)

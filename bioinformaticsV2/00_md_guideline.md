@@ -13,4 +13,6 @@ In the below script, since I had both R1 and R2 files in the same path, I checke
 
 ```
 
-[Previous -> Quality Control](./01_QualityControl.md) | 2 | [Next → Read Alignment](./03_Align.md) | [← Return to main list](../README.md)
+[1 ← Quality Control](./01_QualityControl.md) | 2 | [3 → Read Alignment](./03_Align.md)
+
+[← Return to main list](../README.md)

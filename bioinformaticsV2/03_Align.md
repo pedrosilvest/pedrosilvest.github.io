@@ -153,5 +153,7 @@ EOL
 
 ```
 
-[Previous -> Trimming](./02_TrimGalore.md) | 3 | [Next → Coverage](./04_Coverage.md) | [← Return to main list](../README.md)
+[2 ← Trimming](./02_TrimGalore.md) | 3 | [4 → Coverage](./04_Coverage.md)
+
+[← Return to main list](../README.md)
 
