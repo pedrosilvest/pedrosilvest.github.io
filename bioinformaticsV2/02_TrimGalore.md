@@ -1,16 +1,18 @@
-# Trimming and Adapter Removal Pipeline for Paired-End Sequencing Data
+# Trimming Pipeline for Paired-End Sequencing Data
 
-This script performs adapter trimming and quality filtering on paired-end sequencing data using Trim Galore. It processes R1 and R2 reads, removing low-quality bases and adapter sequences while generating updated quality reports through FastQC. The output is a cleaner, high-quality dataset ready for alignment or further downstream analysis.
+**Objective**:  
+This script performs quality trimming and adapter removal on paired-end sequencing data using **Trim Galore**. It also runs **FastQC** to assess the quality of the trimmed reads. The trimming process enhances data quality by removing adapters, low-quality bases, and short reads, ensuring that the processed reads are suitable for downstream analyses such as genome assembly and variant calling.
 
-After performing initial quality control, it’s essential to remove any remaining adapter sequences or low-quality bases to improve the overall quality of your sequencing data. This step helps to minimize biases and technical artifacts that could affect the accuracy of your analysis. Additionally, by running FastQC again, you can verify that the trimming was successful and that the quality of the data has improved.
+```bash
+srun apptainer exec "\$FASTQC" trim_galore --cores 8 --paired --length 60 --clip_R1 1 --clip_R2 1 --quality 30 --fastqc -o \$temp_output \$R1 \$R2
+```
 
-In the following script, paired-end reads (R1 and R2) are identified, and adapter sequences are removed using Trim Galore. The script ensures that R1 and R2 files are processed together, and the results are outputted to a temporary folder. After trimming, FastQC is automatically run on the trimmed reads for further quality evaluation. I used 8 cores to accelerate the trimming process.
+By trimming adapters and filtering out low-quality sequences, this step improves the reliability of sequencing data for subsequent analysis.
 
-I also added several parameters to fine-tune the trimming:
-
-1. --clip_R1 1 and --clip_R2 1: These options cut the first nucleotide from both R1 and R2 reads. This is useful to remove any technical biases that might occur at the start of the reads.
-2. --quality 30: Ensures that only bases with a Phred quality score of 30 or higher (99.9% base call accuracy) are retained.
-3. --length 60: Discards reads shorter than 60 base pairs after trimming, ensuring that only high-quality, sufficiently long reads are kept for further analysis.
+### Key Parameters:
+1. **`--clip_R1 1` and `--clip_R2 1`**: These options cut the first nucleotide from both R1 and R2 reads. This helps remove technical biases that might occur at the start of the reads.
+2. **`--quality 30`**: Ensures that only bases with a Phred quality score of 30 or higher (99.9% base call accuracy) are retained, improving the overall read quality.
+3. **`--length 60`**: Discards reads shorter than 60 base pairs after trimming, ensuring that only high-quality, sufficiently long reads are kept for further analysis.
 
 [← download script](./scripts/02_TrimGalore.sh)
 

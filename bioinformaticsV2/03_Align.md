@@ -1,17 +1,32 @@
 
-# Read Alignment and BAM File Generation Pipeline for Paired-End Sequencing Data
+# Alignment and BAM Processing Pipeline for Paired-End Sequencing Data
 
-This script aligns paired-end sequencing reads to the human reference genome (GRCh38) using BWA-MEM and processes the alignment output into sorted BAM files. It also generates alignment statistics for quality assurance, ensuring high-quality, properly aligned reads are ready for downstream analysis.
+**Objective**:  
+This script aligns paired-end sequencing data to a reference genome using BWA-MEM, sorts the resulting BAM files, and generates alignment statistics. By efficiently processing trimmed reads (`R1` and `R2`), it prepares the data for downstream analyses such as variant calling and further quality assessment.
 
-After performing trimming and quality control, the next essential step in a sequencing data analysis workflow is aligning the reads to a reference genome. This allows you to map the sequencing data to known genomic coordinates, which is fundamental for variant calling, transcriptomics, or other genome-based analyses. The output BAM file is a key component for these future steps, and the additional alignment statistics ensure the quality of the alignment.
+```bash
+apptainer exec "\$BWA" bwa mem -t 30 -R "\$RG" "\$GENOME" "\$R1" "\$R2" | \
+  apptainer exec "\$SAMTOOLS_IMAGE" samtools view -b -o "\$BAM_OUTPUT" -
 
-In the following script, paired-end reads (R1 and R2) are aligned using BWA-MEM. The output is sorted into a BAM file, and alignment statistics are generated using Samtools.
+apptainer exec "\$SAMTOOLS_IMAGE" samtools sort -@ 30 \$BAM_OUTPUT -o "\$SAVE"
+```
 
-Here are the key points of the alignment process:
+By aligning the reads to a reference genome and sorting the BAM files, this pipeline ensures that sequencing data is properly organized and ready for further analysis.
 
-1. BWA-MEM is used for alignment with 30 threads for efficient processing.
-2. Samtools is employed for converting SAM to BAM, sorting the BAM file, and generating flag statistics for quality assessment.
-3. The Read Group (RG) field is added, which helps distinguish between different samples and sequencing runs, critical for downstream variant calling.
+### Key Parameters:
+1. **Read Group (`RG`)**: The read group information (`ID`, `SM`, `PL`) is included in the alignment to track metadata like sample name and platform. This is essential for accurate downstream processing, especially in multi-sample projects.
+2. **`--threads 30` (`-t 30`)**: Uses 30 threads to speed up the alignment and BAM file sorting processes, making the pipeline more efficient on high-performance clusters.
+3. **BWA and SAMtools**: The script utilizes the BWA-MEM algorithm for alignment and SAMtools for BAM file processing (conversion, sorting, and generating statistics), ensuring high performance and scalability for large datasets.
+
+### Output:
+- **`sorted.bam`**: The sorted BAM file is the main output, which is necessary for downstream analysis tools such as variant callers.
+- **`flagstat` statistics**: A summary of alignment statistics, providing insights into the quality and completeness of the alignment.
+
+### Directory Structure:
+- BAM files are stored in a `bam/` directory.
+- Alignment statistics are stored in a `stats/` directory.
+
+This pipeline ensures efficient alignment and processing of sequencing data, while maintaining clean and organized output for future analyses.
 
 [← download script](./scripts/03_Align.sh)
 
