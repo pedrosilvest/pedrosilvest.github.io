@@ -185,6 +185,6 @@ EOL
 
 ```
 
-[7 ← Read Alignment](./07_Bqsr.md) | 8 | [9 → CombineGVCFs](./09CombineGVCFs.md)
+[7 ← Read Alignment](./07_Bqsr.md) | 8 | [9 → CombineGVCFs](./09_CombineGVCFs.md)
 
 [← Return to main list](../README.md)

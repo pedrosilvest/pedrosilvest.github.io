@@ -258,7 +258,7 @@ EOL
 
 ```
 
-[6 ← MarkDuplicates](./06_MarkDuplicates.md) | 7 | [8 → Bam Filtering](./05_FilterBam.md)
+[6 ← MarkDuplicates](./06_MarkDuplicates.md) | 7 | [8 → Bam Filtering](./08_HaplotypeCaller.md)
 
 [← Return to main list](../README.md)
 
