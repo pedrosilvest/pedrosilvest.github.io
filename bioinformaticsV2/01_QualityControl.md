@@ -1,5 +1,6 @@
 # Quality Control Pipeline for Paired-End Sequencing Data:
 
+<link rel="stylesheet" href="./styles.css">
 
 This script performs an initial quality control (QC) check on paired-end sequencing data using FastQC, ensuring raw reads meet the standards for downstream analyses like variant calling or genome assembly. It checks for issues such as low-quality bases, overrepresented sequences, and adapter contamination by processing both R1 and R2 reads and generating comprehensive reports.
 
